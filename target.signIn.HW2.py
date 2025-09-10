@@ -15,6 +15,7 @@ driver.maximize_window()
 # open the url
 driver.get('https://www.target.com/')
 
+
 # Click Account button tab using find element
 driver.find_element(By.XPATH, "//a[@id='account-sign-in']//span[text()='Account']").click()
 sleep(2)

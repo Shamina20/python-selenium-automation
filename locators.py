@@ -51,3 +51,22 @@ driver.find_element(By.ID, "//a[@id='ap-other-signin-issues-link']")
 driver.find_element(By.ID, "//a[@id='createAccountSubmit']")
 
 
+#Homework3 - Find the most optimal locators for StackOverflow Create Account page elements
+# Create Account - 2 class
+driver.find_element(By.CSS_SELECTOR,'.flex--item.fs-headline1')
+# By Clicking signup - 2 class
+driver.find_element(By.CSS_SELECTOR,'.flex--item.js-terms')
+# Email - ID
+driver.find_element(By.CSS_SELECTOR, '#email')
+# Password - ID
+driver.find_element(By.CSS_SELECTOR, '#password')
+#Hidden password symbol - tag+class
+driver.find_element(By.CSS_SELECTOR,'svg.ps-absolute.js-show-password')
+# signup-button - using ID
+driver.find_element(By.CSS_SELECTOR, '#submit-button')
+# signup with google - tag + 2 class + attributes
+driver.find_element(By.CSS_SELECTOR,'button.flex--item.s-btn__google[data-provider="google"]')
+# signup with github - tag + 2 class + attributes
+driver.find_element(By.CSS_SELECTOR,'button.flex--item.s-btn__github[data-provider="github"]')
+# get stackoverflow link - Partial attributes
+driver.find_element(By.CSS_SELECTOR, "[href*='https://stackoverflow.com/teams?']")
