@@ -15,14 +15,23 @@ driver.maximize_window()
 # open the url
 driver.get('https://www.target.com/')
 
+# SEARCH_FIELD=(By.ID,'search')
+# SEARCH_BUTTON=(By.XPATH, '//button[data-test="@web/Search/SearchButton"]')
 
-# Click Account button tab using find element
-driver.find_element(By.XPATH, "//a[@id='account-sign-in']//span[text()='Account']").click()
-sleep(2)
-# Click  Signin button using find element
-driver.find_element(By.XPATH,"//button[@data-test='accountNav-signIn']").click()
+driver.find_element(By.ID,'search').send_keys('tea')
+driver.find_element(By.XPATH, '//button[@data-test="@web/Search/SearchButton"]').click()
 sleep(5)
-# Verify
-driver.find_element(By.XPATH, "//h1[text()='Sign in or create account']")
-driver.find_element(By.XPATH, "//button[text()='Sign in with passkey' and contains(@class,'T5sAi styles_filleddefault__7QnWt')]")
-print("Test Passed")
+# actual_text_product = driver.find_element(By.XPATH,"//div[@data-test='lp-resultsCount']").text
+# print(actual_text_product)
+
+
+# # Click Account button tab using find element
+# driver.find_element(By.XPATH, "//a[@id='account-sign-in']//span[text()='Account']").click()
+# sleep(2)
+# # Click  Signin button using find element
+# driver.find_element(By.XPATH,"//button[@data-test='accountNav-signIn']").click()
+# sleep(5)
+# # Verify
+# driver.find_element(By.XPATH, "//h1[text()='Sign in or create account']")
+# driver.find_element(By.XPATH, "//button[text()='Sign in with passkey' and contains(@class,'T5sAi styles_filleddefault__7QnWt')]")
+# print("Test Passed")

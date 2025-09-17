@@ -4,7 +4,8 @@ from time import sleep
 
 CART_ICON=(By.CSS_SELECTOR,'[data-test="@web/CartLink"]')
 SIGNIN_ICON=(By.CSS_SELECTOR,'#account-sign-in')
-
+SEARCH_FIELD=(By.ID,'search')
+SEARCH_BUTTON=(By.XPATH, '//button[@data-test="@web/Search/SearchButton"]')
 
 # Click on Cart Icon code here
 @when('click on cart icon')
@@ -18,3 +19,12 @@ sleep(5)
 def click_signin_icon(context):
    context.driver.find_element(*SIGNIN_ICON).click()
 sleep(5)
+
+
+#Click on search tab and enter product
+@when('Search for {product}')
+def search_product(context, product):
+    context.driver.find_element(*SEARCH_FIELD).send_keys(product)
+    context.driver.find_element(*SEARCH_BUTTON).click()
+    sleep(5)
+
