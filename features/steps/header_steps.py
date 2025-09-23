@@ -3,7 +3,7 @@ from behave import given, when, then
 from time import sleep
 
 
-SIGNIN_ICON=(By.CSS_SELECTOR,'#account-sign-in')
+# SIGNIN_ICON=(By.CSS_SELECTOR,'#account-sign-in')
 # SEARCH_FIELD=(By.ID,'search')
 # SEARCH_BUTTON=(By.XPATH, '//button[@data-test="@web/Search/SearchButton"]')
 
@@ -16,8 +16,9 @@ def click_cart(context):
 # Click on SignIn Icon code here
 @when('click signin icon')
 def click_signin_icon(context):
-   context.driver.find_element(*SIGNIN_ICON).click()
-sleep(5)
+#    context.driver.find_element(*SIGNIN_ICON).click()
+# sleep(5)
+    context.app.header.click_sign_in()
 
 
 #Click on search tab and enter product

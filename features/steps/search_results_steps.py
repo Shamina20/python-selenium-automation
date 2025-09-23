@@ -6,7 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
-ADD_TO_CART_ICON=(By.CSS_SELECTOR,"[id*='addToCartButton']")
+# ADD_TO_CART_ICON=(By.CSS_SELECTOR,"[id*='addToCartButton']")
 LISTING=(By.CSS_SELECTOR,"[data-test='@web/site-top-of-funnel/ProductCardWrapper']")
 PRODUCT_TITLE=(By.CSS_SELECTOR,"[data-test='product-title']")
 PRODUCT_IMAGE=(By.CSS_SELECTOR,'img')
@@ -25,9 +25,13 @@ def click_add_to_cart(context):
     # element.click()
 
     sleep(5)
-    context.driver.execute_script("window.scrollBy(0, 500);")
-    element = context.driver.find_element(*ADD_TO_CART_ICON)
-    element.click()
+    context.driver.execute_script("window.scrollBy(0, 1000);")
+    # context.driver.execute_script("window.scrollBy(0, 2000)", "")
+    # sleep(8)
+    # context.driver.execute_script("window.scrollBy(0, 1000)", "")
+    # element = context.driver.find_element(*ADD_TO_CART_ICON)
+    # element.click()
+    context.app.search_results_page.click_add_to_cart()
 
 @then('verify product name and images')
 def verify_product_name_image(context):
